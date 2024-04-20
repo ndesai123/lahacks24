@@ -6,12 +6,13 @@ import Button from 'react-bootstrap/Button';
 import { Outlet } from 'react-router-dom';
 
 
-
 const About = () => {
   return (
-    <div style={{ backgroundColor: '#F6FAEB' }}>
+    <div>
       <div>
-        <h1 style={{ textAlign: 'center' }}>About Us</h1>
+        <h1 className="title">
+          <span className="about"></span> <br/><br/> <span className="long-words"></span>
+        </h1>
       </div>
       <Outlet />
     </div>
