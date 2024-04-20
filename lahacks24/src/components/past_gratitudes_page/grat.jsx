@@ -11,7 +11,7 @@ const Gratitudes = () => {
   return (
     <div>
       <div>
-          <div className='title'>
+          <div className='titleGrat'>
             <p className='titleText'>Past Gratitudes.</p>
           </div>
         <div class="columns-container">
