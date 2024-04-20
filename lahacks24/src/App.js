@@ -1,6 +1,10 @@
 import Navbar from "./components/navbar/navbar"
 import Home from "./components/home_page/home"
 import About from "./components/about_page/about"
+import Resources from "./components/resources_page/resources"
+import Pets from "./components/pet_page/pet"
+import Gratitudes from "./components/past_gratitudes_page/grat"
+
 
 import "./App.css"
 
@@ -14,11 +18,9 @@ function App() {
                 <Route path="/" element={<Navbar />}>
                     <Route path="/" element={<Home />}/>
                     <Route path="/about" element={<About />}/>
-                    { /*<Route path="/create" element={<Create />}/>
-                    <Route path="/workouts" element={<Workouts />}/>
-                    <Route path="/settings" element={<Settings />}/>
-                    <Route path="/login" element={<Login />}/>
-                    <Route path="/signup" element={<SignUp />}/> */}
+                    <Route path="/resources" element={<Resources />}/>
+                    <Route path="/gratitudes" element={<Gratitudes />}/>
+                    <Route path="/pets" element={<Pets />}/>
                 </Route>
             </Routes>
         </div>

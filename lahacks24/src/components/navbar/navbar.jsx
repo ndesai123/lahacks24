@@ -15,11 +15,23 @@ const Navbar = () => {
   const navigate = useNavigate();
     
   const handleHomeClick = () => {
-      navigate("/")
+    navigate("/")
   }
   
   const handleAboutClick = () => {
     navigate("/about")
+  }
+
+  const handleResourceClick = () => {
+    navigate("/resources")
+  }
+
+  const handlePetsClick = () => {
+    navigate("/pets")
+  }
+
+  const handleGratClick = () => {
+    navigate("/gratitudes")
   }
   
   const [user, setUser] = useState(null);
@@ -51,18 +63,26 @@ const Navbar = () => {
     <div>
       <div className="navbar">
         <div className="navtabs">
-            <p className="logo">Wellness Waddle</p>
-            <Button variant="link"><p onClick={handleHomeClick}>Home</p></Button>
-            <Button variant="link"><p>test</p></Button>
-            <Button variant="link"><p>test</p></Button>
+            <Button variant="link" className="logo"><p onClick={handleHomeClick}>Wellness Waddle</p></Button>
+            
+            {user ? (
+              <p>
+                <Button variant="link"><p onClick={handlePetsClick}>Pets</p></Button>
+                <Button variant="link"><p onClick={handleGratClick}>Past Gratitudes</p></Button>
+              </p>
+            ) : (
+              <></>
+            )}
+
+            <Button variant="link"><p onClick={handleResourceClick}>Resources</p></Button>
             <Button variant="link"><p onClick={handleAboutClick}>About</p></Button>
             {user ? (
               <Button variant='standard' onClick={signOutGoogle}>
-                Sign Out
+                <p>Sign Out</p>
               </Button>
             ) : (
               <Button variant='standard' onClick={googleSignIn}>
-                Login/Sign Up
+                <p>Login/Sign Up</p>
               </Button>
             )}
         </div>

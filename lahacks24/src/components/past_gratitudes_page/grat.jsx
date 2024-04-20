@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import "./resources.css";
+import "./grat.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 
@@ -7,15 +7,15 @@ import { Outlet } from 'react-router-dom';
 
 
 
-const Resources = () => {
+const Gratitudes = () => {
   return (
     <div>
       <div>
-        RESOURCES
+        GRATITUDES
       </div>
       <Outlet />
     </div>
   )
 }
 
-export default Resources
+export default Gratitudes
