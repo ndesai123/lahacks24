@@ -10,8 +10,8 @@ import { Outlet } from 'react-router-dom';
 const Home = () => {
   return (
     <div className='home'>
-      <div>
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+      <div className='slogan'>
+        Mindfulness starts here.
       </div>
       <Outlet />
     </div>
