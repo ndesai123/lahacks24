@@ -10,8 +10,10 @@ import { Outlet } from 'react-router-dom';
 const Pets = () => {
   return (
     <div>
-      <div>
-        PETS
+      <div class="centered">
+        <p>Daily goal: X/3 </p>
+        <p>Lifetime: XX </p>
+        <img class="img-size" src="adult_duck.PNG"></img>
       </div>
       <Outlet />
     </div>
