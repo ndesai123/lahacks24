@@ -4,6 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from "react-router-dom";
 
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
+
 import { Outlet } from 'react-router-dom';
 
 const Pets = () => {
@@ -20,7 +23,13 @@ const Pets = () => {
         <p>Lifetime: XX </p>
         <img className="img-size" src="adult_duck.PNG" alt="Duck"></img> {/* Added alt attribute */}
         <div>
-          <button>SUBMIT GRATITUDE</button>
+        <Popup className="submitPopup" trigger={<button>SUBMIT GRATITUDE</button>} modal nested>
+          {closed => (
+            <div>
+              AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+            </div>
+            )}
+          </Popup>
           <button onClick={handleGratClick}>PAST GRATITUDES</button>
         </div>
       </div>
