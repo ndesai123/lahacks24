@@ -1,24 +1,52 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./navbar.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
-
 import { Outlet } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
-import { useEffect } from 'react';
+
+import { signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from 'firebase/auth';
 
 
+import { auth, googleProvider } from '../../firebase.js';
 
 const Navbar = () => {
-    const navigate = useNavigate();
+
+  const navigate = useNavigate();
     
-    const handleHomeClick = () => {
-        navigate("/")
-    }
-    
-    const handleAboutClick = () => {
-      navigate("/about")
-    }
+  const handleHomeClick = () => {
+      navigate("/")
+  }
+  
+  const handleAboutClick = () => {
+    navigate("/about")
+  }
+  
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUser(user);
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, []);
+
+  const googleSignIn = () => {
+    signInWithPopup(auth, googleProvider)
+      .then((result) => {
+      })
+      .catch((error) => {
+      });
+  };
+  
+  const signOutGoogle = () => {
+    signOut(auth);
+    setUser(null);
+  };
+
   return (
     <div>
       <div className="navbar">
@@ -28,13 +56,15 @@ const Navbar = () => {
             <Button variant="link"><p>test</p></Button>
             <Button variant="link"><p>test</p></Button>
             <Button variant="link"><p onClick={handleAboutClick}>About</p></Button>
-            {(
-              <Button variant="link"><p>Login</p></Button>
-            )} 
-            {(
-              <Button variant="link"><p>Sign Up</p></Button>
-            )} 
-            
+            {user ? (
+              <Button variant='standard' onClick={signOutGoogle}>
+                Sign Out
+              </Button>
+            ) : (
+              <Button variant='standard' onClick={googleSignIn}>
+                Login/Sign Up
+              </Button>
+            )}
         </div>
       </div>
       <Outlet />
