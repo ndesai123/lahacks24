@@ -66,10 +66,13 @@ const Navbar = () => {
             <Button variant="link" className="logo"><p onClick={handleHomeClick}>Wellness Waddle</p></Button>
             
             {user ? (
-              <p>
                 <Button variant="link"><p onClick={handlePetsClick}>Pets</p></Button>
+            ) : (
+              <></>
+            )}
+
+            {user ? (
                 <Button variant="link"><p onClick={handleGratClick}>Past Gratitudes</p></Button>
-              </p>
             ) : (
               <></>
             )}

@@ -1,6 +1,6 @@
 .navbar{
     display:flex;
-    background-color: #F6FAEB;
+    background-color: #a0b297;
     justify-content: flex-end;
 
 }
@@ -48,7 +48,6 @@
     position: absolute;
     font-size: larger;
     left:4.75%;
-    top:17%;
     font-family:Georgia, 'Times New Roman', Times, serif;
     font-weight: bolder;
 }
