@@ -1,0 +1,10 @@
+.columns-container {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .column {
+    flex: 1; /* Each column takes up equal space */
+    padding: 0 10px; /* Add spacing between columns */
+  }
+  
