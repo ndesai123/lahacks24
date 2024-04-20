@@ -21,8 +21,8 @@
   }
 
   .titleText{
-    font-weight:505;
     display: block;
     font-size: 250%;
+    font-family: "Inter", sans-serif;
   }
   

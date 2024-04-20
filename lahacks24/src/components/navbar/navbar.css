@@ -1,6 +1,6 @@
 .navbar{
     display:flex;
-    background-color: #a0b297;
+    background-color: #F6FAEB;
     justify-content: flex-end;
 
 }
@@ -25,12 +25,12 @@
     color:black;
     text-decoration: none;
     font-size: larger;
+    font-family: "Inter", sans-serif;
 }
 
 .logo{
     position: absolute;
     font-size: larger;
     left:4.75%;
-    font-family:Georgia, 'Times New Roman', Times, serif;
     font-weight: bolder;
 }

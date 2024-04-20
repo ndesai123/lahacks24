@@ -7,7 +7,6 @@
   }
 
   .titleTextRe {
-    font-weight: bold; /* Ensure the font is bold */
     display: block;
     font-size: 250%;
     font-family: "Inter", sans-serif; /* Change the font-family to Inter */
