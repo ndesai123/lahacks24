@@ -1,15 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./navbar.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 
 import { Outlet } from 'react-router-dom';
-import { useNavigate } from "react-router-dom";
-import { useEffect } from 'react';
+import { signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from 'firebase/auth';
 
-const navbar = () => {
 
+import { auth, googleProvider } from '../../firebase.js';
+
+const Navbar = () => {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUser(user);
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, []);
+
+  const googleSignIn = () => {
+    signInWithPopup(auth, googleProvider)
+      .then((result) => {
+      })
+      .catch((error) => {
+      });
+  };
   
+  const signOutGoogle = () => {
+    signOut(auth);
+    setUser(null);
+  };
 
   return (
     <div>
@@ -20,13 +44,15 @@ const navbar = () => {
             <Button variant="link"><p>test</p></Button>
             <Button variant="link"><p>test</p></Button>
             <Button variant="link"><p>test</p></Button>
-            {(
-              <Button variant="link"><p>Login</p></Button>
-            )} 
-            {(
-              <Button variant="link"><p>Sign Up</p></Button>
-            )} 
-            
+            {user ? (
+              <Button variant='standard' onClick={signOutGoogle}>
+                Sign Out
+              </Button>
+            ) : (
+              <Button variant='standard' onClick={googleSignIn}>
+                Login/Sign Up
+              </Button>
+            )}
         </div>
       </div>
       <Outlet />
@@ -34,4 +60,4 @@ const navbar = () => {
   )
 }
 
-export default navbar
+export default Navbar;
