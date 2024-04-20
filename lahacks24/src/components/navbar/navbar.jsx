@@ -6,8 +6,6 @@ import { Outlet } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 
 import { signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from 'firebase/auth';
-
-
 import { auth, googleProvider } from '../../firebase.js';
 
 const Navbar = () => {
