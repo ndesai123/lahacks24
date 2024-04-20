@@ -1,6 +1,6 @@
 .navbar{
     display:flex;
-    background-color: #F3EDEC;
+    background-color: #F6FAEB;
     justify-content: flex-end;
 
 }
@@ -47,19 +47,8 @@
 .logo{
     position: absolute;
     font-size: larger;
-    left:6.75%;
+    left:3.75%;
     top:25%;
     font-family:Georgia, 'Times New Roman', Times, serif;
     font-weight: bolder;
-}
-
-.profileLetter{
-    position: absolute;
-    font-size: 200%;
-    color:floralwhite;
-    right:3.42%;
-    top:13%;
-    user-select: none;
-    text-decoration: none;
-    cursor:pointer;
 }

@@ -7,19 +7,27 @@ import { Outlet } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import { useEffect } from 'react';
 
-const navbar = () => {
 
-  
 
+const Navbar = () => {
+    const navigate = useNavigate();
+    
+    const handleHomeClick = () => {
+        navigate("/")
+    }
+    
+    const handleAboutClick = () => {
+      navigate("/about")
+    }
   return (
     <div>
       <div className="navbar">
         <div className="navtabs">
             <p className="logo">Wellness Waddle</p>
-            <Button variant="link"><p>Home</p></Button>
+            <Button variant="link"><p onClick={handleHomeClick}>Home</p></Button>
             <Button variant="link"><p>test</p></Button>
             <Button variant="link"><p>test</p></Button>
-            <Button variant="link"><p>test</p></Button>
+            <Button variant="link"><p onClick={handleAboutClick}>About</p></Button>
             {(
               <Button variant="link"><p>Login</p></Button>
             )} 
@@ -34,4 +42,4 @@ const navbar = () => {
   )
 }
 
-export default navbar
+export default Navbar
