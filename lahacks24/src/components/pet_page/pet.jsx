@@ -14,6 +14,10 @@ const Pets = () => {
         <p>Daily goal: X/3 </p>
         <p>Lifetime: XX </p>
         <img class="img-size" src="adult_duck.PNG"></img>
+        <div>
+          <button>SUBMIT GRATITUDE</button>
+          <button>VIEW PAST GRATITUDES</button>
+        </div>
       </div>
       <Outlet />
     </div>
