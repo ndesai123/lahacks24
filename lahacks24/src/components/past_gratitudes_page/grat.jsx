@@ -11,8 +11,9 @@ const Gratitudes = () => {
   return (
     <div>
       <div>
-        <p>Past Gratitudes.</p>
-
+          <div className='title'>
+            <p className='titleText'>Past Gratitudes.</p>
+          </div>
         <div class="columns-container">
           <div class="column">
             <p>MM/DD/YYYY</p>
