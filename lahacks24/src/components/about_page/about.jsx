@@ -9,9 +9,9 @@ import { Outlet } from 'react-router-dom';
 
 const About = () => {
   return (
-    <div>
+    <div style={{ backgroundColor: '#F6FAEB' }}>
       <div>
-        ABOUT
+        <h1 style={{ textAlign: 'center' }}>About Us</h1>
       </div>
       <Outlet />
     </div>
