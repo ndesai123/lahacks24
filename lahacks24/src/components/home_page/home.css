@@ -1,5 +1,5 @@
-.home{
-    display:flex;
-    background-color: #a0b297;
-    justify-content: flex;
+html, body, .home{
+    background-color: #F6FAEB;
+    height:100%;
+    width:100%;
 }
