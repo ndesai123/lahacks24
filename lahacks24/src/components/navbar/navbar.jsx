@@ -2,14 +2,26 @@ import React, { useState, useEffect } from 'react';
 import "./navbar.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
-
 import { Outlet } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+
 import { signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from 'firebase/auth';
 
 
 import { auth, googleProvider } from '../../firebase.js';
 
 const Navbar = () => {
+
+  const navigate = useNavigate();
+    
+  const handleHomeClick = () => {
+      navigate("/")
+  }
+  
+  const handleAboutClick = () => {
+    navigate("/about")
+  }
+  
   const [user, setUser] = useState(null);
 
   useEffect(() => {
@@ -40,10 +52,10 @@ const Navbar = () => {
       <div className="navbar">
         <div className="navtabs">
             <p className="logo">Wellness Waddle</p>
-            <Button variant="link"><p>Home</p></Button>
+            <Button variant="link"><p onClick={handleHomeClick}>Home</p></Button>
             <Button variant="link"><p>test</p></Button>
             <Button variant="link"><p>test</p></Button>
-            <Button variant="link"><p>test</p></Button>
+            <Button variant="link"><p onClick={handleAboutClick}>About</p></Button>
             {user ? (
               <Button variant='standard' onClick={signOutGoogle}>
                 Sign Out
@@ -60,4 +72,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar;
+export default Navbar
