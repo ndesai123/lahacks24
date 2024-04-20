@@ -1,0 +1,20 @@
+.titleResources {
+    position: absolute;
+    left:50%;
+    top:20%;
+    transform: translate(-50%,-50%);
+
+  }
+
+  .titleTextRe{
+    font-weight:505;
+    display: block;
+    font-size: 250%;
+  }
+
+  .resourcesList{
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+  }
