@@ -200,9 +200,13 @@ const Pets = () => {
           {(() => {
             if(points <= 0){
               return(
-                <img className="img-size-baby position-duck-baby" src="ababyduck.gif" alt="Duck" />
+                <img className="img-size-baby position-duck-baby" src="sadbabybwbw" alt="Duck" />
               )
             } else if(points < 500){
+              return(
+                <img className="img-size-baby position-duck-baby" src="ababyduck.gif" alt="Duck" />
+              )
+            } else if(points < 1000){
               return(
                 <img className="img-size-middle position-duck-middle" src="amiddleduck.gif" alt="Duck" />
               )
