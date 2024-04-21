@@ -1,28 +1,28 @@
 .columns-container {
-    display: flex;
+  display: flex;
     flex-direction: row;
     position: absolute;
     left:50%;
     top:50%;
     transform: translate(-50%,-50%);
-  }
-  
-  .column {
+}
+
+.column {
     flex: 1; /* Each column takes up equal space */
     padding: 0 10px; /* Add spacing between columns */
-  }
+}
 
-  .titleGrat {
+.titleGrat {
     position: absolute;
     left:50%;
     top:20%;
     transform: translate(-50%,-50%);
 
-  }
+}
 
   .titleText{
     display: block;
     font-size: 250%;
-    font-family: "Inter", sans-serif;
-  }
-  
+  font-family: "Inter", sans-serif;
+}
+
