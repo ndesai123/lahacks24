@@ -24,14 +24,14 @@ const Pets = () => {
         <p className="font-size position-lifetime">Lifetime: XX </p>
         <img className="img-size position-duck" src="adult_duck.PNG" alt="Duck"></img> {/* Added alt attribute */}
         <div className="button-container font-size-button">
-        <Popup className="submitPopup position-image position-leftbutton" trigger={<button>SUBMIT GRATITUDE</button>} modal nested>
+        <Popup className="submitPopup" trigger={<button className="position-leftbutton">SUBMIT GRATITUDE</button>} modal nested>
           {closed => (
             <div>
               AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
             </div>
             )}
           </Popup>
-          <button className="position-image position-rightbutton" onClick={handleGratClick}>PAST GRATITUDES</button>
+          <button className="position-rightbutton" onClick={handleGratClick}>PAST GRATITUDES</button>
         </div>
       </div>
       <Outlet />
