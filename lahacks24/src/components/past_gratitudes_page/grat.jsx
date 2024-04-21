@@ -49,16 +49,15 @@ const Gratitudes = () => {
         <div className='titleGrat'>
           <p className='titleText'>Past Gratitudes</p>
         </div>
-        {gratitudes.map(gratitude => (
-          <div className="columns-container" key={gratitude.id}> {/* Moved key to parent div */}
-            <div className="column">
-              <p>{gratitude.date}</p>
-            </div>
-            <div className="column">
-              <p>{gratitude.gratitude}</p>
-            </div>
-          </div>
-        ))}
+        <div className='pastGratitudes'> {/* Moved the div outside of the map function */}
+          <ul className="gratList"> {/* Changed div to ul for semantic purposes */}
+          {gratitudes.map(gratitude => (
+            <li className="gratElements" key={gratitude.id}>
+              {gratitude.date}{"\n"}{gratitude.gratitude} <hr className='line' /> 
+            </li>
+          ))}
+          </ul>
+        </div>
       </div>
       <Outlet />
     </div>
