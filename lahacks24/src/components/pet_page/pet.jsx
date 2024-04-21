@@ -147,11 +147,22 @@ const Pets = () => {
           }</button>}{...{contentStyle}} modal nested>
             {closed => (
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
-                <form onSubmit={handleSubmit}>
-                  <label htmlFor="gratitudeInput" style={{ fontFamily: "Inria Serif" }}>What are you grateful for today?</label> {/* Apply font family style */}
-                  <input type="text" id="gratitudeInput" name="gratitude" value={gratitude} onChange={handleChange} required />
+                <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+                  <label htmlFor="gratitudeInput" style={{ fontFamily: "Inria Serif", fontSize: "18px" }}>What are you grateful for today?</label> {/* Apply font family style and adjust font size */}
+                  <br /> {/* Add line break */}
+                  <br />
                   {error && <p className="error-message">{error}</p>} {/* Display error message */}
-                  <button type="submit" style={{ fontFamily: "Inria Serif" }} disabled={loading || !user || dailyGoal === 3}>Submit</button> {/* Apply font family style and disable button during loading or if user is not logged in or daily goal is complete */}
+                  <textarea 
+                    id="gratitudeInput" 
+                    name="gratitude" 
+                    value={gratitude} 
+                    onChange={handleChange} 
+                    required 
+                    style={{ width: '400px', height: '100px', resize: 'vertical' }} // Adjust width and height to make the text box larger and enable vertical resizing
+                  />
+                  <br /> 
+                  <br /> 
+                  <button type="submit" style={{ fontFamily: "Inria Serif", backgroundColor: "black", color: "white", padding: "10px 20px" }} disabled={loading || !user || dailyGoal === 3}>SUBMIT</button> {/* Apply font family style, set background color to black, and text color to white. Adjust padding to make the button bigger. Disable button during loading or if user is not logged in or daily goal is complete */}
                 </form>
               </div>
             )}
