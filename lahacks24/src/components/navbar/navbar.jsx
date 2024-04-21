@@ -6,8 +6,6 @@ import { Outlet } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 
 import { signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from 'firebase/auth';
-
-
 import { auth, googleProvider } from '../../firebase.js';
 
 const Navbar = () => {
@@ -66,10 +64,13 @@ const Navbar = () => {
             <Button variant="link" className="logo"><p onClick={handleHomeClick}>Wellness Waddle</p></Button>
             
             {user ? (
-              <p>
                 <Button variant="link"><p onClick={handlePetsClick}>Pets</p></Button>
+            ) : (
+              <></>
+            )}
+
+            {user ? (
                 <Button variant="link"><p onClick={handleGratClick}>Past Gratitudes</p></Button>
-              </p>
             ) : (
               <></>
             )}

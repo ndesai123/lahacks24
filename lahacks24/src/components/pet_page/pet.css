@@ -66,3 +66,9 @@
 .font-size-button {
     font-size: 1.525vw; /* Adjust font size as needed */
   }
+
+.submitPopup-content{
+    width: 75%;
+    height:75%;
+}
+

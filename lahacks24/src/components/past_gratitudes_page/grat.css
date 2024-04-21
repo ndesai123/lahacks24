@@ -1,0 +1,27 @@
+.columns-container {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+  }
+  
+  .column {
+    flex: 1; /* Each column takes up equal space */
+    padding: 0 10px; /* Add spacing between columns */
+  }
+
+  .titleGrat {
+    position: absolute;
+    left:50%;
+    top:20%;
+    transform: translate(-50%,-50%);
+
+  }
+
+  .titleText{
+    font-weight:505;
+    font-size: 200%;
+  }
+  
