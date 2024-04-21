@@ -19,7 +19,8 @@ const Gratitudes = () => {
           const querySnapshot = await getDocs(collection(db, 'entry'));
           const data = querySnapshot.docs
             .map(doc => ({ id: doc.id, ...doc.data() }))
-            .filter(gratitude => gratitude.owner === user.uid); // Filter gratitudes by owner matching auth user ID
+            .filter(gratitude => gratitude.owner === user.uid) // Filter gratitudes by owner matching auth user ID
+            .sort((a, b) => new Date(b.date) - new Date(a.date)); // Sort gratitudes by date in descending order
           setGratitudes(data);
         } else {
           setGratitudes([]); // If no user is signed in, clear gratitudes
