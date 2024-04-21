@@ -6,8 +6,32 @@
 .centered {
     text-align: center;
 }
-.img-size {
-    width: 15%;
+
+.img-size-baby {
+    width: 20%;
+}
+
+.position-duck-baby {
+    position: relative; /* Set position to relative */
+    top: 5vh;
+}
+
+.img-size-middle {
+    width: 20%;
+}
+
+.position-duck-middle {
+    position: relative; /* Set position to relative */
+    top: 10vh;
+}
+
+.img-size-adult {
+    width: 18%;
+}
+
+.position-duck-adult {
+    position: relative; /* Set position to relative */
+    top: 21vh;
 }
 
 .font-size {
@@ -29,26 +53,9 @@
     transform: translateX(-50%);
 }
 
-.position-duck {
-    position: relative; /* Set position to relative */
-    top: 34vh; /* Set top offset to 100 pixels */
-}
-
 .position-image {
     position: relative; /* Set position to relative */
     top: 35vh; /* Set top offset to 100 pixels */
-}
-
-.position-rightbutton{
-    position: relative;
-    top: 45vh;
-    right: 78%;
-}
-
-.position-leftbutton{
-    position: relative;
-    top: 45vh;
-    left: 78%;
 }
   
 .button-container {
@@ -68,15 +75,15 @@
 }
 
 .position-rightbutton {
-    position: relative;
-    top: 35vh;
-    right: 10%;
+    position: absolute;
+    top: 80%;
+    left: 10%;
 }
 
 .position-leftbutton {
-    position: relative;
-    top: 35vh;
-    left: 10%;
+    position: absolute;
+    top: 80%;
+    right: 10%;
 }
 
 .font-size-button {
@@ -87,4 +94,9 @@
 .submitPopup-content{
     width: 75%;
     height:75%;
+}
+
+.health-bar{
+    position:absolute;
+    
 }

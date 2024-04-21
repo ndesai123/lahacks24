@@ -139,10 +139,27 @@ const Pets = () => {
         <div className="health-bar">
           <div className="health-bar-fill" style={{ width: `${(points / 1000) * 100}%` }}></div>
         </div>
-        <img className="img-size position-duck" src="adult_duck.PNG" alt="Duck" />
+
+        <div>
+          {(() => {
+            if(points <= 0){
+              return(
+                <img className="img-size-adult position-duck-adult" src="adultduck.gif" alt="Duck" />
+              )
+            } else if(points < 500){
+              return(
+                <img className="img-size-middle position-duck-middle" src="amiddleduck.gif" alt="Duck" />
+              )
+            } else {
+              return(
+                <img className="img-size-adult position-duck-adult" src="adultduck.gif" alt="Duck" />
+              )
+            }
+          })()}
+        </div>
         <div className="button-container font-size-button">
 
-        <Popup className="submitPopup" trigger={<button className="position-leftbutton" disabled={loading || !user || dailyGoal === 3}>{
+          <Popup className="submitPopup" trigger={<button className="position-leftbutton" disabled={loading || !user || dailyGoal === 3}>{
             dailyGoal === 3 ? "DAILY GOAL COMPLETE" : "SUBMIT GRATITUDE"
           }</button>}{...{contentStyle}} modal nested>
             {closed => (
