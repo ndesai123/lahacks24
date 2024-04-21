@@ -5,7 +5,70 @@
     width: 15%;
 }
 
+.font-size {
+    font-size: 2vw; /* Adjust font size as needed */
+  }
+
+.position-daily {
+    position: absolute;
+    top: 28vh; /* Position 40% from the top of the screen */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center vertically */
+  }
+
+.position-lifetime {
+    position: absolute; 
+    top: 33vh;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.position-duck {
+    position: relative; /* Set position to relative */
+    top: 32vh; /* Set top offset to 100 pixels */
+}
+
+.position-image {
+    position: relative; /* Set position to relative */
+    top: 35vh; /* Set top offset to 100 pixels */
+}
+
+.position-rightbutton{
+    position: relative;
+    top: 45vh;
+    right: 78%;
+}
+
+.position-leftbutton{
+    position: relative;
+    top: 45vh;
+    left: 78%;
+}
+  
+.button-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 25%;
+}
+
+.button-container button {
+    width: 200px;
+    height: 40px;
+    margin: 10px;
+    background-color: black;
+    color: white; /* Set text color to white */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.font-size-button {
+    font-size: 1.525vw; /* Adjust font size as needed */
+  }
+
 .submitPopup-content{
     width: 75%;
     height:75%;
 }
+
