@@ -32,7 +32,7 @@
 
 .position-duck-adult {
     position: relative; /* Set position to relative */
-    top: 27vh;
+    top: 26vh;
 }
 
 .font-size {
@@ -42,7 +42,7 @@
 
 .position-points {
     position: absolute;
-    top: 98px;
+    top: 96px;
     left: 50%; 
     transform: translate(-50%, -50%); 
 }
@@ -64,14 +64,14 @@
 
 .position-daily {
     position: absolute;
-    top: 185px; 
+    top: 170px; 
     left: 50%; 
     transform: translate(-50%, -50%); 
   }
 
 .position-lifetime {
     position: absolute; 
-    top: 210px;
+    top: 190px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -94,14 +94,14 @@
 
 .position-rightbutton {
     position: absolute;
-    top: 570px;
-    left: 12%;
+    top: 520px;
+    right: 12%;
 }
 
 .position-leftbutton {
     position: absolute;
-    top: 570px;
-    right: 12%;
+    top: 520px;
+    left: 12%;
 }
 
 .font-size-button {
@@ -116,7 +116,7 @@
 
 .position-prestigeCounter{
     position: absolute;
-    top:83%;
+    top:545px;
     left:50%;
     transform: translateX(-50%);
 

@@ -191,8 +191,8 @@ const Pets = () => {
       <div className="centered text-position">
         <p className="font-size position-daily">Daily Goal: {dailyGoal}/3 </p> {/* Display daily goal */}
         <p className="font-size position-lifetime">Lifetime Gratitudes: {lifetimeGratitudes} </p> {/* Display lifetime gratitudes count */}
-        <p className="font-size position-points">Points: {points}/1000</p> {/* Display points out of 1000 */}
-        <p className='font-size position-prestigeCounter'>Prestige: {points/1000}</p>
+        <p className="font-size position-points">Points: {(points%1000)}/1000</p> {/* Display points out of 1000 */}
+        <p className='font-size position-prestigeCounter'>Prestige: {Math.floor(points/1000)}</p>
 
         <div className="health-bar">
           <div className="health-bar-fill" style={{ width: `${((points%1000) / 1000) * 100}%` }}></div>
@@ -206,7 +206,7 @@ const Pets = () => {
               )
             } else if(points < 500){
               return(
-                <img className="img-size-adult position-duck-adult" src="adultduck.gif" alt="Duck" />
+                <img className="img-size-baby position-duck-baby" src="ababyduck.gif" alt="Duck" />
               )
             } else if(points < 1000){
               return(
