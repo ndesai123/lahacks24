@@ -3,20 +3,6 @@
   src: url(../../../public/InriaSerif-Regular.ttf)
 }
 
-.columns-container {
-  display: flex;
-    flex-direction: row;
-    position: absolute;
-    left:50%;
-    top:50%;
-    transform: translate(-50%,-50%);
-}
-
-.column {
-    flex: 1; /* Each column takes up equal space */
-    padding: 0 10px; /* Add spacing between columns */
-}
-
 .titleGrat {
     position: absolute;
     left:50%;
@@ -45,3 +31,32 @@
   background-color: #4caf50;
 }
 
+.pastGratitudes{
+  position: absolute;
+  left:10%;
+  top: 15%;
+  word-break: break-all;
+  white-space: pre-wrap;
+  
+}
+
+.gratElements{
+  margin-top: 1.5%;
+  margin-right: 10%;
+  font-family: "Inria Serif";
+  font-size: 120%;
+}
+
+.gratColumn{
+  font-size: 100%;
+}
+
+.gratList {
+  list-style-type: none; /* Remove default list styles */
+  padding: 0; /* Remove default padding */
+}
+
+.gratColumn {
+  display: block; /* Display as block element */
+  margin-bottom: 10px; /* Add margin between each gratitude */
+}
