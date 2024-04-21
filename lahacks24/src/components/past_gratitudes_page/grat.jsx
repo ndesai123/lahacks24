@@ -47,7 +47,7 @@ const Gratitudes = () => {
     <div>
       <div>
         <div className='titleGrat'>
-          <p className='titleText'>Past Gratitudes</p>
+          <p className='titleText'>Past Gratitudes.</p>
         </div>
         {gratitudes.map(gratitude => (
           <div className="columns-container" key={gratitude.id}> {/* Moved key to parent div */}
