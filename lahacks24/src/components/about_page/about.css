@@ -1,23 +1,20 @@
 .about::before{
     content: "About Us.";
-    font-weight:505;
-    font-size: 4vw;
+    margin-top: 60px;
     display: block;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 28%;
-    left: 50%;
+    font-size: 250%;
+    font-family: "Inter", sans-serif;
 }
 
   .long-words::after {
-    font-size: 1.5vw;
+    font-size: 150%;
     content: "Step into Wellness Waddle, your daily companion on the path to mental well-being." "\A\A With three prompts a day, embark on a journey of gratitude, positivity, and self-affirmation. Share what you\'re grateful for, capture moments of joy with photos, and affirm the best in yourself. But tread carefully – miss a step, and your health bar dwindles, reflected in the size of your beloved duck. Nurture your mental health with each mindful stride, and watch as your duck grows in resilience and strength. Take flight with Wellness Waddle and discover the transformative power of daily wellness rituals.";
     position: absolute;
     top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     white-space: pre-line;
-    width: 80%;
+    width: 70%;
 }
 
 .title {
