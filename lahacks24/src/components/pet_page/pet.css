@@ -113,3 +113,11 @@
     width: 75%;
     height:75%;
 }
+
+.position-prestigeCounter{
+    position: absolute;
+    top:83%;
+    left:50%;
+    transform: translateX(-50%);
+
+}

@@ -192,6 +192,8 @@ const Pets = () => {
         <p className="font-size position-daily">Daily Goal: {dailyGoal}/3 </p> {/* Display daily goal */}
         <p className="font-size position-lifetime">Lifetime Gratitudes: {lifetimeGratitudes} </p> {/* Display lifetime gratitudes count */}
         <p className="font-size position-points">Points: {points}/1000</p> {/* Display points out of 1000 */}
+        <p className='font-size position-prestigeCounter'>Prestige: {points/1000}</p>
+
         <div className="health-bar">
           <div className="health-bar-fill" style={{ width: `${((points%1000) / 1000) * 100}%` }}></div>
         </div>
@@ -204,7 +206,7 @@ const Pets = () => {
               )
             } else if(points < 500){
               return(
-                <img className="img-size-baby position-duck-baby" src="ababyduck.gif" alt="Duck" />
+                <img className="img-size-adult position-duck-adult" src="adultduck.gif" alt="Duck" />
               )
             } else if(points < 1000){
               return(
@@ -217,9 +219,7 @@ const Pets = () => {
             }
           })()}
         </div>
-        <div className='prestigeCounter'>{points/1000}</div>
         <div className="button-container font-size-button">
-
           <Popup className="submitPopup" trigger={<button className="position-leftbutton" disabled={loading || !user || dailyGoal === 3}>{
             dailyGoal === 3 ? "DAILY GOAL COMPLETE" : "SUBMIT GRATITUDE"
           }</button>}{...{contentStyle}} modal nested>
