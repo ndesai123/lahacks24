@@ -20,6 +20,12 @@
   .resourcesList{
     position: absolute;
     left:50%;
-    top:50%;
+    top:55%;
     transform: translate(-50%,-50%);
+  }
+
+  .p1{
+    font-family: "Inria Serif";
+    font-size: 120%;
+    margin-top: 4%;
   }

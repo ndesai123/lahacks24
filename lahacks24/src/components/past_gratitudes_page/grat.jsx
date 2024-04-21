@@ -47,7 +47,7 @@ const Gratitudes = () => {
     <div>
       <div>
         <div className='titleGrat'>
-          <p className='titleText'>Past Gratitudes</p>
+          <p className='titleText'>Past Gratitudes.</p>
         </div>
         <div className='pastGratitudes'> {/* Moved the div outside of the map function */}
           <ul className="gratList"> {/* Changed div to ul for semantic purposes */}
