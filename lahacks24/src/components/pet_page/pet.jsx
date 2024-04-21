@@ -110,21 +110,21 @@ const Pets = () => {
         <img className="img-size position-duck" src="adult_duck.PNG" alt="Duck" />
         <div className="button-container font-size-button">
 
-          <Popup className="submitPopup" trigger={<button className="position-leftbutton" disabled={loading || !user || dailyGoal === 3}>{
+        <Popup className="submitPopup" trigger={<button className="position-leftbutton" disabled={loading || !user || dailyGoal === 3}>{
             dailyGoal === 3 ? "DAILY GOAL COMPLETE" : "SUBMIT GRATITUDE"
           }</button>}{...{contentStyle}} modal nested>
             {closed => (
-              <div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
                 <form onSubmit={handleSubmit}>
-                  <label htmlFor="gratitudeInput">What are you grateful for?</label>
+                  <label htmlFor="gratitudeInput" style={{ fontFamily: "Inria Serif" }}>What are you grateful for today?</label> {/* Apply font family style */}
                   <input type="text" id="gratitudeInput" name="gratitude" value={gratitude} onChange={handleChange} required />
                   {error && <p className="error-message">{error}</p>} {/* Display error message */}
-                  <button type="submit" disabled={loading || !user || dailyGoal === 3}>Submit</button> {/* Disable button during loading or if user is not logged in or daily goal is complete */}
+                  <button type="submit" style={{ fontFamily: "Inria Serif" }} disabled={loading || !user || dailyGoal === 3}>Submit</button> {/* Apply font family style and disable button during loading or if user is not logged in or daily goal is complete */}
                 </form>
               </div>
-
             )}
           </Popup>
+
           <button className="position-rightbutton" onClick={handleGratClick}>PAST GRATITUDES</button>
         </div>
       </div>
