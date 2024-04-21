@@ -21,9 +21,9 @@
   position: absolute;
   left:10%;
   top: 15%;
-  word-break: break-all;
+  width:100%;
   white-space: pre-wrap;
-  
+  word-break: break-all;
 }
 
 .gratElements{
@@ -38,11 +38,16 @@
 }
 
 .gratList {
-  list-style-type: none; /* Remove default list styles */
-  padding: 0; /* Remove default padding */
+  list-style-type: none;
+  padding: 0;
+  width:90%
 }
 
 .gratColumn {
-  display: block; /* Display as block element */
-  margin-bottom: 10px; /* Add margin between each gratitude */
+  display: block;
+  margin-bottom: 10px;
+}
+
+.line{
+  width:100%;
 }
