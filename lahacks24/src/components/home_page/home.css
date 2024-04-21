@@ -13,28 +13,29 @@ html, body, .home{
     font-size: 3.4vw;
     position: absolute;
     left:51.5%;
-    top:28vh;
+    top:210px;
     transform: translate(-50%, -50%);
     font-family: "Inria Serif";
     
 }
 
 .position-banner {
-    position: relative;
-    top: 45vh;
+    position: absolute;
+    top: 380px;
     left: 50%;
     width: 20vw;
+    min-width: 5vw;
     transform: translate(-50%, -50%);
 }
 
 .startButton{
     white-space: nowrap;
     width: 15%;
-    height: 10%;
+    height: width;
     border-radius: 0px;
     position: absolute;
     left: 50%;
-    bottom: 8vh;
+    top: 595px;
     transform: translateX(-50%);
     font-size: 1.6vw;
     font-family: "Inria Serif";
