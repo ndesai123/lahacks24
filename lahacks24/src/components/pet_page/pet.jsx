@@ -189,11 +189,11 @@ const Pets = () => {
   return (
     <div>
       <div className="centered text-position">
-        <p className="font-size position-daily">Daily goal: {dailyGoal}/3 </p> {/* Display daily goal */}
-        <p className="font-size position-lifetime">Lifetime: {lifetimeGratitudes} </p> {/* Display lifetime gratitudes count */}
+        <p className="font-size position-daily">Daily Goal: {dailyGoal}/3 </p> {/* Display daily goal */}
+        <p className="font-size position-lifetime">Lifetime Gratitudes: {lifetimeGratitudes} </p> {/* Display lifetime gratitudes count */}
         <p className="font-size position-points">Points: {points}/1000</p> {/* Display points out of 1000 */}
         <div className="health-bar">
-          <div className="health-bar-fill" style={{ width: `${(points / 1000) * 100}%` }}></div>
+          <div className="health-bar-fill" style={{ width: `${((points%1000) / 1000) * 100}%` }}></div>
         </div>
 
         <div>
@@ -217,6 +217,7 @@ const Pets = () => {
             }
           })()}
         </div>
+        <div className='prestigeCounter'>{points/1000}</div>
         <div className="button-container font-size-button">
 
           <Popup className="submitPopup" trigger={<button className="position-leftbutton" disabled={loading || !user || dailyGoal === 3}>{
