@@ -10,31 +10,32 @@ html, body, .home{
 }
 
 .slogan{
-    font-size: 265%;
+    font-size: 3.4vw;
     position: absolute;
     left:51.5%;
-    top:22%;
+    top:28vh;
     transform: translate(-50%, -50%);
     font-family: "Inria Serif";
     
 }
 
-.homeImage{
-    width:20%;
-    position: absolute;
-    left:50%;
-    top:47%;
+.position-banner {
+    position: relative;
+    top: 45vh;
+    left: 50%;
+    width: 20vw;
     transform: translate(-50%, -50%);
 }
 
 .startButton{
+    white-space: nowrap;
     width: 15%;
-    height:10%;
+    height: 10%;
     border-radius: 0px;
     position: absolute;
-    left:50%;
-    top:85%;
-    transform: translate(-50%,-50%);
-    font-size: 20px;
+    left: 50%;
+    bottom: 8vh;
+    transform: translateX(-50%);
+    font-size: 1.6vw;
     font-family: "Inria Serif";
 }
