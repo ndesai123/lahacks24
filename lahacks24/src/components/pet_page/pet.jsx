@@ -108,14 +108,16 @@ const Pets = () => {
         <img className="img-size position-duck" src="adult_duck.PNG" alt="Duck" />
         <div className="button-container font-size-button">
 
-          <Popup className="submitPopup" trigger={<button className="position-leftbutton" disabled={loading || !user}>SUBMIT GRATITUDE</button>}{...{contentStyle}} modal nested>
+          <Popup className="submitPopup" trigger={<button className="position-leftbutton" disabled={loading || !user || dailyGoal === 3}>{
+            dailyGoal === 3 ? "DAILY GOAL COMPLETE" : "SUBMIT GRATITUDE"
+          }</button>}{...{contentStyle}} modal nested>
             {closed => (
               <div>
                 <form onSubmit={handleSubmit}>
                   <label htmlFor="gratitudeInput">What are you grateful for?</label>
                   <input type="text" id="gratitudeInput" name="gratitude" value={gratitude} onChange={handleChange} required />
                   {error && <p className="error-message">{error}</p>} {/* Display error message */}
-                  <button type="submit" disabled={loading || !user}>Submit</button> {/* Disable button during loading or if user is not logged in */}
+                  <button type="submit" disabled={loading || !user || dailyGoal === 3}>Submit</button> {/* Disable button during loading or if user is not logged in or daily goal is complete */}
                 </form>
               </div>
 
