@@ -21,7 +21,7 @@
   position: absolute;
   left:10%;
   top: 155px;
-  width:100%;
+  width:90%;
   white-space: pre-wrap;
   word-break: break-all;
 }
@@ -40,7 +40,7 @@
 .gratList {
   list-style-type: none;
   padding: 0;
-  width:90%
+  width:100%
 }
 
 .gratColumn {
