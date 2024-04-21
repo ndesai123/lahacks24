@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import { auth, db } from '../../firebase.js';
-import { collection, addDoc, query, where, getDocs } from "firebase/firestore"; 
+import { collection, addDoc, query, where, getDocs, doc, getDoc, updateDoc } from "firebase/firestore"; 
 
 import { Outlet } from 'react-router-dom';
 
@@ -83,12 +83,35 @@ const Pets = () => {
     setLoading(true);
   
     try {
-      const docRef = await addDoc(collection(db, "entry"), {
+      // Add entry document
+      const entryRef = await addDoc(collection(db, "entry"), {
         date: formattedDate,
         gratitude,
         owner: user.uid
       });
-      console.log('Event data stored successfully with ID:', docRef.id);
+      console.log('Event data stored successfully with ID:', entryRef.id);
+  
+      // Fetch user document
+      const userRefQuery = query(collection(db, 'user'), where('owner', '==', user.uid));
+      const userDocs = await getDocs(userRefQuery);
+
+      if (!userDocs.empty && userDocs.docs.length > 0) {
+        const userDoc = userDocs.docs[0]; // Assuming there's only one document per user UID
+
+        // Increment points by 50
+        const newPoints = userDoc.data().points + 50;
+
+        // Update user document with new points value
+        await updateDoc(userDoc.ref, { points: newPoints });
+      } else {
+        // Create user document with initial points value
+        await addDoc(collection(db, 'user'), {
+          owner: user.uid,
+          points: 50 // Initial points value
+        });
+      }
+
+  
       setLoading(false);
       navigate('/pets');
       window.location.reload(); // Refresh the page
@@ -97,8 +120,7 @@ const Pets = () => {
       setError('Failed to submit gratitude. Please try again.'); 
       setLoading(false);
     }
-  };
-  
+  };  
 
   const contentStyle = {background: '#F6FAEB'}
 
