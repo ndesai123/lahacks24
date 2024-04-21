@@ -1,9 +1,14 @@
+@font-face{
+  font-family: "Inria Serif";
+  src: url(../../../public/InriaSerif-Regular.ttf)
+}
+
 .about::before{
     content: "About Us.";
     margin-top: 60px;
     display: block;
     font-size: 250%;
-    font-family: "Inter", sans-serif;
+    font-family: "Inria Serif";
 }
 
   .long-words::after {
@@ -15,6 +20,7 @@
     transform: translate(-50%, -50%);
     white-space: pre-line;
     width: 70%;
+    font-family: "Inria Serif"
 }
 
 .title {

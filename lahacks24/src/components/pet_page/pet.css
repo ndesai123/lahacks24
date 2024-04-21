@@ -1,3 +1,8 @@
+@font-face{
+    font-family: "Inria Serif";
+    src: url(../../../public/InriaSerif-Regular.ttf)
+}
+
 .centered {
     text-align: center;
 }
@@ -7,7 +12,7 @@
 
 .font-size {
     font-size: 2vw; /* Adjust font size as needed */
-    font-family: "Inter", sans-serif;
+    font-family: "Inria Serif";
   }
 
 .position-daily {
@@ -76,7 +81,7 @@
 
 .font-size-button {
     font-size: 1.6vw;
-    font-family: "Inter", sans-serif;
+    font-family: "Inria Serif";
   }
 
 .submitPopup-content{

@@ -1,3 +1,8 @@
+@font-face{
+    font-family: "Inria Serif";
+    src: url(../../../public/InriaSerif-Regular.ttf)
+}
+
 html, body, .home{
     background-color: #F6FAEB;
     height:100%;
@@ -10,7 +15,7 @@ html, body, .home{
     left:51.5%;
     top:22%;
     transform: translate(-50%, -50%);
-    font-family: "Inter", sans-serif;
+    font-family: "Inria Serif";
     
 }
 
@@ -31,5 +36,5 @@ html, body, .home{
     top:85%;
     transform: translate(-50%,-50%);
     font-size: 20px;
-    font-family: "Inter", sans-serif;
+    font-family: "Inria Serif";
 }
