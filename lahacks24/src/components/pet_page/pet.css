@@ -4,8 +4,9 @@
 }
 
 .centered {
-    text-align: center;
+    /* text-align: center; */
 }
+
 .img-size {
     width: 15%;
 }
@@ -13,42 +14,61 @@
 .font-size {
     font-size: 2vw; /* Adjust font size as needed */
     font-family: "Inria Serif";
-  }
+}
+
+.position-points {
+    position: absolute;
+    top: 90px;
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+}
+
+.health-bar {
+    width: 100%;
+    background-color: #ddd;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: absolute;
+    top: 115px;
+}
+  
+.health-bar-fill {
+    height: 100%;
+    background-color: #6ac46d;
+}
 
 .position-daily {
     position: absolute;
-    top: 28vh; /* Position 40% from the top of the screen */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Center vertically */
+    top: 190px; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
   }
 
 .position-lifetime {
     position: absolute; 
-    top: 33vh;
+    top: 230px;
     left: 50%;
     transform: translateX(-50%);
 }
 
 .position-duck {
-    position: relative; /* Set position to relative */
-    top: 34vh; /* Set top offset to 100 pixels */
+    position: absolute; 
+    top: 420px;
+    left: 50%; 
+    transform: translate(-50%, -50%); 
 }
 
-.position-image {
-    position: relative; /* Set position to relative */
-    top: 35vh; /* Set top offset to 100 pixels */
+.position-rightbutton {
+    position: absolute;
+    top: 580px;
+    right: 10%;
 }
 
-.position-rightbutton{
-    position: relative;
-    top: 45vh;
-    right: 78%;
-}
-
-.position-leftbutton{
-    position: relative;
-    top: 45vh;
-    left: 78%;
+.position-leftbutton {
+    position: absolute;
+    top: 580px;
+    left: 10%;
 }
   
 .button-container {
@@ -65,18 +85,7 @@
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-}
-
-.position-rightbutton {
-    position: relative;
-    top: 35vh;
-    right: 10%;
-}
-
-.position-leftbutton {
-    position: relative;
-    top: 35vh;
-    left: 10%;
+    border-radius: 20px;
 }
 
 .font-size-button {
