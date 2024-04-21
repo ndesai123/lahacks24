@@ -6,21 +6,21 @@
 .titleGrat {
     position: absolute;
     left:50%;
-    top:20%;
+    top:155px;
     transform: translate(-50%,-50%);
 
 }
 
   .titleText{
     display: block;
-    font-size: 250%;
+    font-size: 3vw;
   font-family: "Inria Serif";
 }
 
 .pastGratitudes{
   position: absolute;
   left:10%;
-  top: 15%;
+  top: 155px;
   width:100%;
   white-space: pre-wrap;
   word-break: break-all;
@@ -30,7 +30,7 @@
   margin-top: 1.5%;
   margin-right: 10%;
   font-family: "Inria Serif";
-  font-size: 120%;
+  font-size: 1.4vw;
 }
 
 .gratColumn{
