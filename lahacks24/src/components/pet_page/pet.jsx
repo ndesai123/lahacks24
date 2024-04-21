@@ -65,7 +65,8 @@ const Pets = () => {
         <p className="font-size position-lifetime">Lifetime: XX </p>
         <img className="img-size position-duck" src="adult_duck.PNG" alt="Duck" />
         <div className="button-container font-size-button">
-          <Popup className="submitPopup position-image position-leftbutton" trigger={<button disabled={loading}>SUBMIT GRATITUDE</button>}{...{contentStyle}} modal nested>
+
+          <Popup className="submitPopup" trigger={<button className="position-leftbutton" disabled={loading}>SUBMIT GRATITUDE</button>}{...{contentStyle}} modal nested>
             {closed => (
               <div>
                 <form onSubmit={handleSubmit}>
@@ -75,9 +76,10 @@ const Pets = () => {
                   <button type="submit" disabled={loading}>Submit</button> {/* Disable button during loading */}
                 </form>
               </div>
+
             )}
           </Popup>
-          <button className="position-image position-rightbutton" onClick={handleGratClick}>PAST GRATITUDES</button>
+          <button className="position-rightbutton" onClick={handleGratClick}>PAST GRATITUDES</button>
         </div>
       </div>
       <Outlet />
