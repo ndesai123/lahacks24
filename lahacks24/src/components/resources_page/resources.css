@@ -6,18 +6,18 @@
 .parentContainer {
   position: absolute;
   width: 100%;
-  height: 100%; /* Set the height to 100% of the viewport height */
+  height: 100; /* Set the height to 100% of the viewport height */
   display: flex;
   justify-content: center;
   align-items: center;
+  top: 250px;
 }
 
 .titleResources {
-    position: fixed;
+    position: absolute;
     left:50%;
-    top:25%;
+    top:200px;
     transform: translate(-50%,-50%);
-
   }
 
   .titleTextRe {
@@ -27,7 +27,7 @@
   }  
 
 .resourcesList {
-    margin: 0 22%;
+    margin: 0 24%;
     text-align: center;
 }
 
