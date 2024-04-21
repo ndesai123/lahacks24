@@ -18,6 +18,7 @@ const Pets = () => {
   const [dailyGoal, setDailyGoal] = useState(0); 
   const [lifetimeGratitudes, setLifetimeGratitudes] = useState(0); 
   const [user, setUser] = useState(null); 
+  const [points, setPoints] = useState(0);
 
   const currentDate = new Date();
   const year = currentDate.getFullYear();
@@ -54,6 +55,16 @@ const Pets = () => {
         const lifetimeGratitudesSnapshot = await getDocs(lifetimeGratitudesQuery);
         const lifetimeGratitudesCount = lifetimeGratitudesSnapshot.size;
         setLifetimeGratitudes(lifetimeGratitudesCount);
+
+        const userRefQuery = query(collection(db, 'user'), where('owner', '==', user.uid));
+        const userDocs = await getDocs(userRefQuery);
+
+        if (!userDocs.empty && userDocs.docs.length > 0) {
+          const userDoc = userDocs.docs[0];
+          setPoints(userDoc.data().points);
+        } else {
+          setPoints(0);
+        }
       } catch (error) {
         console.error('Error fetching data:', error);
         setError('Failed to fetch data. Please try again.'); 
@@ -83,7 +94,6 @@ const Pets = () => {
     setLoading(true);
   
     try {
-      // Add entry document
       const entryRef = await addDoc(collection(db, "entry"), {
         date: formattedDate,
         gratitude,
@@ -91,30 +101,26 @@ const Pets = () => {
       });
       console.log('Event data stored successfully with ID:', entryRef.id);
   
-      // Fetch user document
       const userRefQuery = query(collection(db, 'user'), where('owner', '==', user.uid));
       const userDocs = await getDocs(userRefQuery);
 
       if (!userDocs.empty && userDocs.docs.length > 0) {
-        const userDoc = userDocs.docs[0]; // Assuming there's only one document per user UID
+        const userDoc = userDocs.docs[0];
 
-        // Increment points by 50
         const newPoints = userDoc.data().points + 50;
 
-        // Update user document with new points value
-        await updateDoc(userDoc.ref, { points: newPoints });
+        await updateDoc(userDoc.ref, { points: Math.max(newPoints, 0) }); 
       } else {
-        // Create user document with initial points value
         await addDoc(collection(db, 'user'), {
           owner: user.uid,
-          points: 50 // Initial points value
+          points: 50 
         });
       }
 
   
       setLoading(false);
       navigate('/pets');
-      window.location.reload(); // Refresh the page
+      window.location.reload();
     } catch (error) {
       console.error('Error storing event data:', error);
       setError('Failed to submit gratitude. Please try again.'); 
@@ -129,24 +135,28 @@ const Pets = () => {
       <div className="centered text-position">
         <p className="font-size position-daily">Daily goal: {dailyGoal}/3 </p> {/* Display daily goal */}
         <p className="font-size position-lifetime">Lifetime: {lifetimeGratitudes} </p> {/* Display lifetime gratitudes count */}
+        <p className="font-size position-points">Points: {points}/1000</p> {/* Display points out of 1000 */}
+        <div className="health-bar">
+          <div className="health-bar-fill" style={{ width: `${(points / 1000) * 100}%` }}></div>
+        </div>
         <img className="img-size position-duck" src="adult_duck.PNG" alt="Duck" />
         <div className="button-container font-size-button">
 
-          <Popup className="submitPopup" trigger={<button className="position-leftbutton" disabled={loading || !user || dailyGoal === 3}>{
+        <Popup className="submitPopup" trigger={<button className="position-leftbutton" disabled={loading || !user || dailyGoal === 3}>{
             dailyGoal === 3 ? "DAILY GOAL COMPLETE" : "SUBMIT GRATITUDE"
           }</button>}{...{contentStyle}} modal nested>
             {closed => (
-              <div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
                 <form onSubmit={handleSubmit}>
-                  <label htmlFor="gratitudeInput">What are you grateful for?</label>
+                  <label htmlFor="gratitudeInput" style={{ fontFamily: "Inria Serif" }}>What are you grateful for today?</label> {/* Apply font family style */}
                   <input type="text" id="gratitudeInput" name="gratitude" value={gratitude} onChange={handleChange} required />
                   {error && <p className="error-message">{error}</p>} {/* Display error message */}
-                  <button type="submit" disabled={loading || !user || dailyGoal === 3}>Submit</button> {/* Disable button during loading or if user is not logged in or daily goal is complete */}
+                  <button type="submit" style={{ fontFamily: "Inria Serif" }} disabled={loading || !user || dailyGoal === 3}>Submit</button> {/* Apply font family style and disable button during loading or if user is not logged in or daily goal is complete */}
                 </form>
               </div>
-
             )}
           </Popup>
+
           <button className="position-rightbutton" onClick={handleGratClick}>PAST GRATITUDES</button>
         </div>
       </div>
