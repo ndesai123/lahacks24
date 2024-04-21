@@ -15,8 +15,9 @@ const Pets = () => {
   const [gratitude, setGratitude] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null); 
-  const [dailyGoal, setDailyGoal] = useState(0); // State to store the daily goal
-  const [user, setUser] = useState(null); // State to store the current user
+  const [dailyGoal, setDailyGoal] = useState(0); 
+  const [lifetimeGratitudes, setLifetimeGratitudes] = useState(0); 
+  const [user, setUser] = useState(null); 
 
   const currentDate = new Date();
   const year = currentDate.getFullYear();
@@ -27,13 +28,13 @@ const Pets = () => {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
-        setUser(user); // Set the current user if logged in
+        setUser(user);
       } else {
-        setUser(null); // Set user to null if not logged in
+        setUser(null); 
       }
     });
 
-    return () => unsubscribe(); // Cleanup function to unsubscribe from auth state changes
+    return () => unsubscribe();
   }, []);
 
   useEffect(() => {
@@ -44,20 +45,25 @@ const Pets = () => {
       }
 
       try {
-        const q = query(collection(db, "entry"), where("owner", "==", user.uid), where("date", "==", formattedDate));
-        const querySnapshot = await getDocs(q);
-        const count = querySnapshot.size;
-        setDailyGoal(count);
+        const dailyGoalQuery = query(collection(db, "entry"), where("owner", "==", user.uid), where("date", "==", formattedDate));
+        const dailyGoalSnapshot = await getDocs(dailyGoalQuery);
+        const dailyGoalCount = dailyGoalSnapshot.size;
+        setDailyGoal(dailyGoalCount);
+
+        const lifetimeGratitudesQuery = query(collection(db, "entry"), where("owner", "==", user.uid));
+        const lifetimeGratitudesSnapshot = await getDocs(lifetimeGratitudesQuery);
+        const lifetimeGratitudesCount = lifetimeGratitudesSnapshot.size;
+        setLifetimeGratitudes(lifetimeGratitudesCount);
       } catch (error) {
-        console.error('Error fetching daily goal:', error);
-        setError('Failed to fetch daily goal. Please try again.'); 
+        console.error('Error fetching data:', error);
+        setError('Failed to fetch data. Please try again.'); 
       }
     };
 
     if (user) {
-      fetchDailyGoal(); // Fetch daily goal only if user is logged in
+      fetchDailyGoal(); 
     }
-  }, [user, formattedDate]); // Fetch daily goal whenever user or formattedDate changes
+  }, [user, formattedDate]);
 
   const handleGratClick = () => {
     navigate("/gratitudes");
@@ -98,7 +104,7 @@ const Pets = () => {
     <div>
       <div className="centered text-position">
         <p className="font-size position-daily">Daily goal: {dailyGoal}/3 </p> {/* Display daily goal */}
-        <p className="font-size position-lifetime">Lifetime: XX </p>
+        <p className="font-size position-lifetime">Lifetime: {lifetimeGratitudes} </p> {/* Display lifetime gratitudes count */}
         <img className="img-size position-duck" src="adult_duck.PNG" alt="Duck" />
         <div className="button-container font-size-button">
 
