@@ -42,7 +42,7 @@
 
 .position-points {
     position: absolute;
-    top: 90px;
+    top: 98px;
     left: 50%; 
     transform: translate(-50%, -50%); 
 }
@@ -54,7 +54,7 @@
     border-radius: 10px;
     overflow: hidden;
     position: absolute;
-    top: 115px;
+    top: 120px;
 }
   
 .health-bar-fill {
@@ -64,14 +64,14 @@
 
 .position-daily {
     position: absolute;
-    top: 26%; 
+    top: 185px; 
     left: 50%; 
     transform: translate(-50%, -50%); 
   }
 
 .position-lifetime {
     position: absolute; 
-    top: 30%;
+    top: 210px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -94,14 +94,14 @@
 
 .position-rightbutton {
     position: absolute;
-    top: 80%;
-    left: 10%;
+    top: 570px;
+    left: 12%;
 }
 
 .position-leftbutton {
     position: absolute;
-    top: 80%;
-    right: 10%;
+    top: 570px;
+    right: 12%;
 }
 
 .font-size-button {
