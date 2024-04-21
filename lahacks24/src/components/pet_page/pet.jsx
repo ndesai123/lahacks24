@@ -56,6 +56,8 @@ const Pets = () => {
     }
   };
 
+  const contentStyle = {background: '#F6FAEB'}
+
   return (
     <div>
       <div className="centered text-position">
@@ -63,7 +65,7 @@ const Pets = () => {
         <p className="font-size position-lifetime">Lifetime: XX </p>
         <img className="img-size position-duck" src="adult_duck.PNG" alt="Duck" />
         <div className="button-container font-size-button">
-          <Popup className="submitPopup position-image position-leftbutton" trigger={<button disabled={loading}>SUBMIT GRATITUDE</button>} modal nested>
+          <Popup className="submitPopup position-image position-leftbutton" trigger={<button disabled={loading}>SUBMIT GRATITUDE</button>}{...{contentStyle}} modal nested>
             {closed => (
               <div>
                 <form onSubmit={handleSubmit}>
