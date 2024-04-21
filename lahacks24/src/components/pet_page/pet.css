@@ -3,17 +3,17 @@
     src: url(../../../public/InriaSerif-Regular.ttf)
 }
 
-.centered {
-    text-align: center;
-}
-
 .img-size-baby {
     width: 20%;
 }
 
+.centered{
+    text-align: center;
+}
+
 .position-duck-baby {
     position: relative; /* Set position to relative */
-    top: 5vh;
+    top:9vh
 }
 
 .img-size-middle {
@@ -22,8 +22,9 @@
 
 .position-duck-middle {
     position: relative; /* Set position to relative */
-    top: 10vh;
+    top: 16vh;
 }
+
 
 .img-size-adult {
     width: 18%;
@@ -31,31 +32,48 @@
 
 .position-duck-adult {
     position: relative; /* Set position to relative */
-    top: 21vh;
+    top: 27vh;
 }
 
 .font-size {
     font-size: 2vw; /* Adjust font size as needed */
     font-family: "Inria Serif";
-  }
+}
+
+.position-points {
+    position: absolute;
+    top: 90px;
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+}
+
+.health-bar {
+    width: 100%;
+    background-color: #ddd;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: absolute;
+    top: 115px;
+}
+  
+.health-bar-fill {
+    height: 100%;
+    background-color: #6ac46d;
+}
 
 .position-daily {
     position: absolute;
-    top: 28vh; /* Position 40% from the top of the screen */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Center vertically */
+    top: 26%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
   }
 
 .position-lifetime {
     position: absolute; 
-    top: 33vh;
+    top: 30%;
     left: 50%;
     transform: translateX(-50%);
-}
-
-.position-image {
-    position: relative; /* Set position to relative */
-    top: 35vh; /* Set top offset to 100 pixels */
 }
   
 .button-container {
@@ -84,6 +102,7 @@
     position: absolute;
     top: 80%;
     right: 10%;
+    border-radius: 20px;
 }
 
 .font-size-button {
@@ -94,9 +113,4 @@
 .submitPopup-content{
     width: 75%;
     height:75%;
-}
-
-.health-bar{
-    position:absolute;
-    
 }
