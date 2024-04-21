@@ -79,9 +79,9 @@ const Pets = () => {
       setError('User not signed in.');
       return;
     }
-
+  
     setLoading(true);
-
+  
     try {
       const docRef = await addDoc(collection(db, "entry"), {
         date: formattedDate,
@@ -90,13 +90,15 @@ const Pets = () => {
       });
       console.log('Event data stored successfully with ID:', docRef.id);
       setLoading(false);
-      navigate('/submitted');
+      navigate('/pets');
+      window.location.reload(); // Refresh the page
     } catch (error) {
       console.error('Error storing event data:', error);
       setError('Failed to submit gratitude. Please try again.'); 
       setLoading(false);
     }
   };
+  
 
   const contentStyle = {background: '#F6FAEB'}
 
