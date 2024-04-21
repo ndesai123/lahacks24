@@ -17,6 +17,7 @@ const Resources = () => {
               <p className="font-sizer">National Institute of Mental Health (NIMH): 1-866-615-6464</p>
               <p className="font-sizer">National Alliance on Mental Illness (NAMI): 1-800-950-6264</p>
               <p className="font-sizer">Mental Health America: 1-800-273-TALK (1-800-273-8255)</p>
+              <p className="font-sizer">&nbsp;</p>
               <p className="font-sizer">Remember, these resources are here to support you, whether you're seeking immediate assistance during a crisis or looking for ongoing mental health care.</p>
             </div>
           </div>
