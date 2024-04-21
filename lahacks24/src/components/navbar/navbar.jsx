@@ -55,6 +55,7 @@ const Navbar = () => {
   const signOutGoogle = () => {
     signOut(auth);
     setUser(null);
+    handleHomeClick();
   };
 
   return (
