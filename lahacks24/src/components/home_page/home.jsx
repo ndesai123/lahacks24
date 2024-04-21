@@ -46,7 +46,7 @@ const Home = () => {
         Mindfulness starts here.
       </div>
 
-      <img className='homeImage' src='frontbanner.png'></img>
+      <img className="position-banner" src='frontbanner.png' alt="front banner"/>
 
       {user ? (
           <Button className="startButton" variant='dark' onClick={handlePetsClick}>
